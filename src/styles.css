@@ -1,5 +1,16 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap");
+@font-face {
+  font-family: "Roboto";
+  src: url("https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap");
+}
 
 * {
   font-family: "Roboto", sans-serif;
+}
+
+.calculator {
+  height: 320px;
+  width: 235px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: red;
 }
