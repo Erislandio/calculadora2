@@ -2,9 +2,24 @@ import React from "react";
 import Button from "../button/Button";
 import Display from "../display/Display";
 
+const initialState = {
+  displayValue: "0",
+  clearDisplay: false,
+  operation: null,
+  values: [0, 0],
+  current: 0
+};
+
 export default class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      ...initialState
+    };
+  }
+
   clearMemory = () => {
-    console.log("limpar");
+    this.setState({ ...initialState });
   };
 
   setOperation = operation => {
@@ -12,13 +27,29 @@ export default class Calculator extends React.Component {
   };
 
   addDigit = n => {
-    console.log(n);
+    if (n === "." && this.state.displayValue.includes(".")) {
+      return;
+    }
+
+    const clearDisplay =
+      this.state.displayValue === "0" || this.state.clearDisplay;
+    const currentValue = clearDisplay ? "" : this.state.displayValue;
+    const displayValue = currentValue + n;
+
+    this.setState({ displayValue, clearDisplay: false });
+
+    if (n !== ".") {
+    }
   };
 
   render() {
+    console.log(this);
+
+    const { displayValue } = this.state;
+
     return (
       <div className="calculator">
-        <Display value={100} />
+        <Display value={displayValue} />
         <Button label="AC" triple click={() => this.clearMemory()} />
         <Button label="/" operation click={this.setOperation} />
         <Button label="7" click={this.addDigit} />
