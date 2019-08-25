@@ -7,6 +7,19 @@
   font-family: "Roboto", sans-serif;
 }
 
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  color: #fff;
+  background: #be93c5;
+  background: -webkit-linear-gradient(to right, #7bc6cc, #be93c5);
+  background: linear-gradient(to right, #7bc6cc, #be93c5);
+}
+
 .calculator {
   height: 320px;
   width: 235px;
