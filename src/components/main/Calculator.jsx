@@ -20,6 +20,7 @@ export default class Calculator extends React.Component {
 
   clearMemory = () => {
     this.setState({ ...initialState });
+    console.log("limpar");
   };
 
   setOperation = operation => {
