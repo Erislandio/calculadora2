@@ -3,6 +3,11 @@
   src: url("https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap");
 }
 
+:root {
+  --bg-button: #f0f0f0;
+  --border-button: solid 1px #888;
+}
+
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -26,4 +31,13 @@ body {
   border-radius: 5px;
   overflow: hidden;
   background-color: red;
+}
+
+.button {
+  font-size: 1.4em;
+  background-color: var(--bg-button);
+  border: none;
+  border-right: var(--border-button);
+  border-bottom: var(--border-button);
+  outline: none;
 }
