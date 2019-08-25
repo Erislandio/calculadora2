@@ -33,7 +33,7 @@ body {
 
   display: grid;
   grid-template-columns: repeat(4, 25%);
-  grid-template-rows: 48px 48px 48px 48px 48px;
+  grid-template-rows: 1fr 48px 48px 48px 48px 48px;
 }
 
 .button {
@@ -43,4 +43,36 @@ body {
   border-right: var(--border-button);
   border-bottom: var(--border-button);
   outline: none;
+}
+
+.display {
+  grid-column: span 4;
+  background: #333;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  font-size: 2em;
+}
+
+.button:active {
+  background: #ccc;
+}
+
+.button.double {
+  grid-column: span 2;
+}
+
+.button.triple {
+  grid-column: span 3;
+}
+
+.button.operation {
+  color: #fff;
+  background: #f18231;
+}
+
+.button.operation:active {
+  background: #f18231cc;
 }
