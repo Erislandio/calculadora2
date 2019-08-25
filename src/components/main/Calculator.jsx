@@ -39,6 +39,11 @@ export default class Calculator extends React.Component {
     this.setState({ displayValue, clearDisplay: false });
 
     if (n !== ".") {
+      const i = this.state.current;
+      const newValue = parseFloat(displayValue);
+      const values = { ...this.state.values };
+      values[i] = newValue;
+      this.setState({ values });
     }
   };
 
